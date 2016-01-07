@@ -1,0 +1,24 @@
+// Playground - noun: Tarea 1
+// Autor : Juan Sanchez
+// Pais : El Salvador
+
+import UIKit
+
+// iteraciones de 0 a 100
+for numero in 0...100 {
+    // validar si es divisible entre 5
+    if numero % 5 == 0 {
+       print("\(numero) el número Bingo!!!")
+    }
+    // validar si es par o impar
+    if numero % 2 == 0 {
+       print("\(numero) el número es par!!!")
+    } else {
+        print("\(numero) el número es impar!!!")
+
+    }
+    // validar si el numero esta dentro del rango 30 y 40
+    if numero >= 20 && numero <= 40 {
+       print("\(numero) el número Viva Swift!!!")
+    }
+}
