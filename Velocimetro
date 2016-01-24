@@ -1,0 +1,77 @@
+// Playground : Velocimetro
+// Author : Juan Sanchez
+// Course : Programar para IOS
+// Week 4
+
+import UIKit
+
+enum velocidades : Int {
+  case Apagado = 0
+  case VelocidadBaja = 20
+  case VelocidadMedia = 50
+  case VelocidadAlta = 120
+    
+    init ( velocidadInicial : velocidades) {
+        self = velocidadInicial
+    }
+    
+}
+
+
+
+class Auto {
+    var velocidad : velocidades
+    var velocidadString : String
+    
+    init () {
+        self.velocidad = velocidades.Apagado
+        self.velocidadString = "Apagado"
+    }
+
+    func cambioDeVelocidad() -> ( actual : Int, VelocidadEnCadena : String) {
+       
+        var velocidadActual = self.velocidad.rawValue
+        
+        switch self.velocidad {
+        case velocidades.Apagado:
+            self.velocidad = velocidades.VelocidadBaja
+            self.velocidadString = "Apagado"
+        case velocidades.VelocidadBaja:
+            self.velocidad = velocidades.VelocidadMedia
+            self.velocidadString = "Velocidad baja "
+        case velocidades.VelocidadMedia:
+            self.velocidad = velocidades.VelocidadAlta
+            self.velocidadString = "Velocidad media "
+        case velocidades.VelocidadAlta:
+            self.velocidad = velocidades.VelocidadMedia
+            self.velocidadString = "Velocidad alta "
+        }
+        return ( self.velocidad.rawValue, velocidadString )
+    }
+}
+
+
+let vocho = Auto()
+
+for i in 1...20 {
+
+  var resultado = vocho.cambioDeVelocidad()
+
+  print("\(i). \(resultado.actual), \(resultado.VelocidadEnCadena ) ")
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
